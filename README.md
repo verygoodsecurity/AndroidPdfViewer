@@ -6,7 +6,7 @@ PdfViewer - Library for displaying PDF documents on Android, with animations, ge
 ## Installation
 Add to your application module build.gradle file:
 
-`implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'`
+`implementation 'com.verygoodsecurity:android-pdf-viewer:<latest-version>'`
 
 ## ProGuard
 If you are using ProGuard, add following rule to proguard config file:
