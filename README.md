@@ -4,7 +4,7 @@
 PdfViewer - Library for displaying PDF documents on Android, with animations, gestures, zoom and double tap support. It is improved version of [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library for easy integration with VGS products for Android.
 
 ## Installation
-Add to your application module build.gradle file:
+Add to your module build.gradle file:
 
 `implementation 'com.verygoodsecurity:android-pdf-viewer:<latest-version>'`
 
