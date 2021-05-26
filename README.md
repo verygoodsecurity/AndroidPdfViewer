@@ -18,12 +18,7 @@ If you are using ProGuard, add following rule to proguard config file:
 ## Possible questions
 ### Why resulting apk is so big?
 Android PdfViewer depends on PdfiumAndroid, which is set of native libraries (almost 16 MB) for many architectures.
-Apk must contain all this libraries to run on every device available on market.
-Fortunately, Google Play allows us to upload multiple apks, e.g. one per every architecture.
-There is good article on automatically splitting your application into multiple apks,
-available [here](http://ph0b.com/android-studio-gradle-and-ndk-integration/).
-Most important section is _Improving multiple APKs creation and versionCode handling with APK Splits_, but whole article is worth reading.
-You only need to do this in your application, no need for forking PdfiumAndroid or so.
+Apk must contain all this libraries to run on every device available on market. 
 
 ### Why I cannot open PDF from URL?
 Downloading files is long running process which must be aware of Activity lifecycle, must support some configuration, 
