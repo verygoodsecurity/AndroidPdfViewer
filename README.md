@@ -1,5 +1,5 @@
 # Android PdfViewer
-PdfViewer - wrapper around the pdf view library.
+PdfViewer - wrapper around the original [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library.
 
 
 ```
