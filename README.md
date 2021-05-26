@@ -1,19 +1,28 @@
+![GitHub](https://img.shields.io/github/license/heartexlabs/label-studio?logo=heartex) 
+
 # Android PdfViewer
-PdfViewer - wrapper around the original [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library.
+PdfViewer - Library for displaying PDF documents on Android, with animations, gestures, zoom and double tap support. This is improved version of [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library for easy integration with VGS products for Android.
 
+## Installation
+Add to your module build.gradle file:
 
+`implementation 'com.verygoodsecurity:android-pdf-viewer:<latest-version>'`
+
+## ProGuard
+If you are using ProGuard, add following rule to proguard config file:
+
+```proguard
+-keep class com.shockwave.**
 ```
-Copyright 2017 Bartosz Schiller
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+## Possible questions
+### Why resulting apk is so big?
+Android PdfViewer depends on PdfiumAndroid, which is set of native libraries (almost 16 MB) for many architectures.
+Apk must contain all this libraries to run on every device available on market. 
 
-    http://www.apache.org/licenses/LICENSE-2.0
+### Why I cannot open PDF from URL?
+Downloading files is long running process which must be aware of Activity lifecycle, must support some configuration, 
+data cleanup and caching, so creating such module will probably end up as new library.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+### How can I show last opened page after configuration change?
+You have to store current page number and then set it with `pdfView.defaultPage(page)`, refer to sample app
