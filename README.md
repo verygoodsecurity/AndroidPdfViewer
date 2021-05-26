@@ -1,7 +1,7 @@
 ![GitHub](https://img.shields.io/github/license/heartexlabs/label-studio?logo=heartex) 
 
 # Android PdfViewer
-PdfViewer - Library for displaying PDF documents on Android, with animations, gestures, zoom and double tap support. It is improved version of [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library for easy integration with VGS products for Android.
+PdfViewer - Library for displaying PDF documents on Android, with animations, gestures, zoom and double tap support. This is improved version of [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) library for easy integration with VGS products for Android.
 
 ## Installation
 Add to your module build.gradle file:
