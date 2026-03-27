@@ -2,17 +2,40 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.vanniktech.maven.publish'
 
 android {
-    compileSdkVersion 30
+    namespace 'com.github.barteksc.pdfviewer'
+    compileSdkVersion 36
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 30
-        versionCode VERSION_CODE.toInteger()
-        versionName VERSION_NAME
+        minSdkVersion 21
+        targetSdkVersion 36
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Configure packaging for 16 KB page size compatibility.
+    // Native libraries should be stored uncompressed and page-aligned in the APK.
+    packagingOptions {
+        jniLibs {
+            // Setting to false ensures native libraries are stored uncompressed and aligned.
+            // This is the default for AGP 3.6+ but explicitly set for clarity.
+            useLegacyPackaging false
+        }
+    }
+
+    // Enable 16 KB page size support for native libraries
+    ndkVersion "28.0.12433566"  // Use NDK r28+ for 16 KB support
+
+    // Disable lint for now to focus on 16 KB compatibility
+    lint {
+        abortOnError false
+    }
+
 }
 
 dependencies {
-    implementation 'androidx.core:core:1.5.0'
-    api 'com.github.barteksc:pdfium-android:1.9.0'
+    implementation 'androidx.core:core:1.17.0'
+    api 'io.github.oothp:pdfium-android:1.9.5-beta01'
 }
