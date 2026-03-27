@@ -8,6 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 36
+        versionCode VERSION_CODE.toInteger()
+        versionName VERSION_NAME
     }
 
     compileOptions {
